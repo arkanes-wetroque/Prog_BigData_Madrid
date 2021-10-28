@@ -3,10 +3,10 @@ from pandas import DataFrame
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-from data2017 import get2017
+from datas import getDataframeSimple
 from functions import typeConso
 
-df1 = get2017()
+df1 = getDataframeSimple()
 
 data2 = {'Year': [1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010],
          'Unemployment_Rate': [9.8, 12, 8, 7.2, 6.9, 7, 6.5, 6.2, 5.5, 6.3]
