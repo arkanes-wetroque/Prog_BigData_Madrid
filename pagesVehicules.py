@@ -76,11 +76,7 @@ def pageTypeConso():
             ),
         ]),
 
-        dash_table.DataTable(
-            id='table',
-            columns=[{"name": i, "id": i} for i in dfTotalCountTipo.columns],
-            data=dfTotalCountTipo.to_dict('records'),
-        ),
+
     ])])
 
 
