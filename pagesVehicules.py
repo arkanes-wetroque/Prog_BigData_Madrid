@@ -38,12 +38,10 @@ dfV21['Year'] = '2021'
 
 
 # Not used cuz in test , Blocked by concat atm need to concat without losing row values
-dfTotalCountTipo = pd.concat([dfV17,
-                              dfV18,
-                              dfV19,
-                              dfV20,
-                              dfV21,
-                              ])
+#dfTotalCountTipo = pd.concat([dfV17, dfV18, dfV19, dfV20, dfV21, ]).value_counts()
+
+#dfTotalCountTipo
+
 
 
 
