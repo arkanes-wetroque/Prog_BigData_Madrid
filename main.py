@@ -7,13 +7,11 @@ from dash import Input, Output, dcc, html
 
 import pandas as pd
 
-from datasVehicules import TotalConsoByTypo
-from functions import generate_table
 
 
 
 #VARIABLES
-from pages import pageTypeConso
+from pagesVehicules import pageTypeConso
 
 """
 
@@ -54,16 +52,16 @@ CONTENT_STYLE = {
 
 sidebar = html.Div(
     [
-        html.H2("Sidebar", className="display-4"),
+        html.H2("Pelegrino", className="display-4"),
         html.Hr(),
         html.P(
-            "A simple sidebar layout with navigation links", className="lead"
+            "Projecto de Big Data UPM ", className="lead"
         ),
         dbc.Nav(
             [
                 dbc.NavLink("Tipos", href="/", active="exact"),
-                dbc.NavLink("Page 1", href="/page-1", active="exact"),
-                dbc.NavLink("Page 2", href="/page-2", active="exact"),
+                dbc.NavLink("Papeleras solares", href="/page-1", active="exact"),
+                dbc.NavLink("Consumo y géneracion Madrid", href="/page-2", active="exact"),
             ],
             vertical=True,
             pills=True,
