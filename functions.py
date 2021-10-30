@@ -1,13 +1,23 @@
+import dash
+import dash_html_components as html
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 
 
-#This file will be functions calc one and charts
+#This file will be functions calc one and charts and dash
 
-def typeConso(dataframe):
-    conso = dataframe.groupby('ENERG�A/COMBUSTIBLE')['N� MPAL'].nunique()
-    return conso
+def generate_table(dataframe, max_rows=10):
+    return html.Table([
+        html.Thead(
+            html.Tr([html.Th(col) for col in dataframe.columns])
+        ),
+        html.Tbody([
+            html.Tr([
+                html.Td(dataframe.iloc[i][col]) for col in dataframe.columns
+            ]) for i in range(min(len(dataframe), max_rows))
+        ])
+    ])
+
+
 
 
 

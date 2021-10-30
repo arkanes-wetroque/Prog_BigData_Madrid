@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from functools import reduce
 
 # This file will be the data getter and washer
 
@@ -29,8 +30,11 @@ def updateValuesStart2020(datas):
 
 
 def TotalConsoByTypo():
-    totalconsobytipo = pd.concat([d17Clean, d18Clean, d19Clean, d20Clean, d21Clean], axis=1)
-    print(totalconsobytipo)
+    #totalconsobytipo = pd.concat([d17Group, d18Group, d19Group, d20Group, d21Group], axis=1)
+    dfrr = [d17Group, d18Group, d19Group, d20Group, d21Group]
+    totalconsobytipo = reduce(lambda left,right: pd.merge(left,right,on='Type'), dfrr)
+    #totalconsobytipo = pd.merge(dfrr, on='Type', how='right')
+    #print(totalconsobytipo)
     return totalconsobytipo
 
 
@@ -48,15 +52,25 @@ d20step = d20.drop_duplicates()
 d21step = d21.drop_duplicates()
 
 d17Tab = updatedataBefore2020(d17step)
-d17Clean = updateValuesBefore2020(d17Tab).value_counts()
+d17Clean = updateValuesBefore2020(d17Tab)
+d17Group = updateValuesBefore2020(d17Tab).value_counts().rename_axis('Type').reset_index(name='2017')
 
 d18Tab = updatedataBefore2020(d18step)
-d18Clean = updateValuesBefore2020(d18Tab).value_counts()
+d18Clean = updateValuesBefore2020(d18Tab)
+d18Group = updateValuesBefore2020(d18Tab).value_counts().rename_axis('Type').reset_index(name='2018')
 
 d19Tab = updatedataBefore2020(d19step)
-d19Clean = updateValuesBefore2020(d19Tab).value_counts()
+d19Clean = updateValuesBefore2020(d19Tab)
+d19Group = updateValuesBefore2020(d19Tab).value_counts().rename_axis('Type').reset_index(name='2019')
 
-d20Clean = updateValuesBefore2020(d20step).value_counts()
-d21Clean = updateValuesBefore2020(d21step).value_counts()
+d20Clean = updateValuesBefore2020(d20step)
+d20Group = updateValuesBefore2020(d20step).value_counts().rename_axis('Type').reset_index(name='2020')
+
+d21Clean = updateValuesBefore2020(d21step)
+d21Group = updateValuesBefore2020(d21step).value_counts().rename_axis('Type').reset_index(name='2021')
 
 
+
+
+#d17Group1 = d17Group.join(d21Group["2021"],d20Group["2020"])
+TotalConsoByTypo()
