@@ -1,9 +1,9 @@
 # Project BIG DATA - Group PELEGRINO
 
-This project is an analyze of different open datas about the city and mayor of Madrid.
+This project is an analyze of different open datas about comune of Madrid.
 * Analyzes of the Solar Panels (1)
-* Analyzes of Energies used by the hall of Madrid (2)
-* Analyzes of the consomation and production by the hall of Madrid (3)
+* Analyzes of Energies used by the comune of Madrid (2)
+* Analyzes of the consomation and production by the comune of Madrid (3)
 
 
 ### Dependencies 
