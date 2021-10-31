@@ -17,7 +17,8 @@ totalFoto = dfAll.shape[0]
 group=dfAll.groupby(["Empresa"])
 groupEmpresa = group.size().reset_index(name='counts')
 
-
+usos=dfAll.groupby(["Uso"])
+groupUsos = usos.size().reset_index(name='counts')
 
 
 fig = px.scatter_mapbox(dfAll, lat="Latitud", lon="Longitud", hover_name="Centro", hover_data=["DateInst", "Uso"],
@@ -27,6 +28,7 @@ fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 pieEmpresa = px.pie(dfAll, names='Empresa', title="Instalation per Empresa")
 bar1 = px.bar(groupEmpresa, x="Empresa", y="counts",barmode="group")
+barUsos = px.bar(groupUsos, x="Uso", y="counts",barmode="group")
 
 def pageFotos():
     return html.Div(children=[
@@ -55,6 +57,10 @@ def pageFotos():
         ], className="six columns"),
 
     ], className="row"),
+    html.Div([
+        dcc.Graph(id='test-graph22',
+                  figure=barUsos)
+    ], className="six columns"),
 
 
 
