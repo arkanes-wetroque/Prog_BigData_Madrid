@@ -13,7 +13,10 @@ from datasFotos import dfFotoAll
 
 dfAll = dfFotoAll()
 totalFoto = dfAll.shape[0]
-print(dfAll)
+
+group=dfAll.groupby(["Empresa"])
+groupEmpresa = group.size().reset_index(name='counts')
+
 
 
 
@@ -23,7 +26,7 @@ fig.update_layout(mapbox_style="open-street-map")
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 pieEmpresa = px.pie(dfAll, names='Empresa', title="Instalation per Empresa")
-
+bar1 = px.bar(groupEmpresa, x="Empresa", y="counts",barmode="group")
 
 def pageFotos():
     return html.Div(children=[
@@ -47,8 +50,10 @@ def pageFotos():
                       figure=pieEmpresa)
         ], className="six columns"),
         html.Div([
-            dcc.Graph(id='g2', figure=pieEmpresa)
+            dcc.Graph(id='test-graph22',
+                      figure=bar1)
         ], className="six columns"),
+
     ], className="row"),
 
 
