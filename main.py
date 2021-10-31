@@ -11,6 +11,7 @@ import pandas as pd
 
 
 #VARIABLES
+from pagesConsumoGeneracion import pageConsumoGeneracion
 from pagesVehicules import pageTypeConso
 
 """
@@ -85,7 +86,7 @@ def render_page_content(pathname):
     elif pathname == "/page-1":
         return html.P("This is the content of page 1. Yay!")
     elif pathname == "/page-2":
-        return html.P("Oh cool, this is page 2!")
+        return pageConsumoGeneracion()
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
         [
