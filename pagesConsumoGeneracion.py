@@ -116,7 +116,7 @@ def pageConsumoGeneracion():
             ),
         ]),
 
-        html.H1(children='Generacion de energia per tipo'),
+        html.H1(children='Generacion de energia per manera'),
 
         html.Div([
             html.Div([
@@ -130,17 +130,6 @@ def pageConsumoGeneracion():
                 dcc.Graph(id='g2', figure=pieGene2020)
             ], className="six columns"),
         ], className="row"),
-
-
-
-
-
-
-
-
-
-
-
     ])
 
 
