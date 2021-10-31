@@ -7,7 +7,7 @@ This project is an analyze of different open datas about the city and mayor of M
 
 
 ### Dependencies 
-*We are still working of the project so at the moment we only put the main librairies used*
+*We are still working of the project so at the moment we only put the main librairies used (Everything will be translated in spanish before the end of the project*
 * Pandas
 * Dash
 * Numpy
