@@ -31,3 +31,9 @@ def getDataFrameByAmbito(year, type):
                       "Alumbrado e instalaciones"], 'count': [CAmb1_18, CAmb2_18, CAmb3_18, CAmb4_18, CAmb5_18]}
     AmbitioDataframe = pd.DataFrame(data=df)
     return AmbitioDataframe
+
+
+def getAmbitoTypeEnergy(type, year):
+    res = df1t.groupby(['ÁMBITO 2', 'AÑO', 'CLASE', 'TIPO'])['CANTIDAD'].mean().reset_index()
+    res = res[(res['CLASE'] == type) & (res['AÑO'] == year)]
+    return res
