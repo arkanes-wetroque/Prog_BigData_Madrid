@@ -61,12 +61,8 @@ def pageTypeConso():
         id='test-graph',
         figure=figureConsoTotal2017
         ),
-
-
-
-
-
-    ])])
+    ])
+    ])
 
 
 
