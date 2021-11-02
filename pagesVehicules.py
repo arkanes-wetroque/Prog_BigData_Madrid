@@ -29,7 +29,7 @@ print(dataframeTotal)
 # Not used cuz in test , Blocked by concat atm need to concat without losing row values
 groupEnergie=dataframeTotal.groupby(["Energie", "Date"])['Num']
 dataEnergie = groupEnergie.size().reset_index(name='counts')
-
+#
 
 
 
