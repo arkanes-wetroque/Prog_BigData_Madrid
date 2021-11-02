@@ -15,25 +15,7 @@ from pagesConsumoGeneracion import pageConsumoGeneracion
 from pagesFotos import pageFotos
 from pagesVehicules import pageTypeConso
 
-"""
 
-app.layout = html.Div(children=[
-    html.H1(children='test'),
-    html.Div(children='''
-    Dash : test app vehicule type conso
-    '''),
-
-    html.Div(children=[
-        dcc.Graph(
-        id='test-graph',
-        figure=figureConsoTotal
-    ),
-    html.H4(children='Datas by types'),
-    generate_table(DFConsoTypeTotal)
-    ],),
-])
-
-"""
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 SIDEBAR_STYLE = {
@@ -61,7 +43,7 @@ sidebar = html.Div(
         ),
         dbc.Nav(
             [
-                dbc.NavLink("Tipos", href="/", active="exact"),
+                dbc.NavLink("El parque movil", href="/", active="exact"),
                 dbc.NavLink("instalaciones fotovoltaicas", href="/page-1", active="exact"),
                 dbc.NavLink("Consumo y géneracion Madrid", href="/page-2", active="exact"),
             ],

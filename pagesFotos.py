@@ -26,7 +26,7 @@ fig = px.scatter_mapbox(dfAll, lat="Latitud", lon="Longitud", hover_name="Centro
 fig.update_layout(mapbox_style="open-street-map")
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
-pieEmpresa = px.pie(dfAll, names='Empresa', title="Instalation per Empresa")
+pieEmpresa = px.pie(groupEmpresa, values='counts', names='Empresa', title="Instalation per Empresa")
 bar1 = px.bar(groupEmpresa, x="Empresa", y="counts",barmode="group")
 barUsos = px.bar(groupUsos, x="Uso", y="counts",barmode="group")
 

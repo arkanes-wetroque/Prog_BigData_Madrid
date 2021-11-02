@@ -1,4 +1,6 @@
 
+
+#TODO - Work out on the new way of process used with Data vehicules
 import dash
 import pandas as pd
 import dash_core_components as dcc
@@ -116,6 +118,7 @@ def pageConsumoGeneracion():
             ),
         ]),
 
+        #TODO - Wait for the new way of processing then make a big graph about the kind of generation per year.
         html.H1(children='Generacion de energia per manera'),
 
         html.Div([
