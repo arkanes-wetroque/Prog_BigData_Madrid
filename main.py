@@ -1,6 +1,6 @@
 import dash
 import dash_core_components as dcc
-import dash_html_components as html
+from dash import html
 import plotly.express as px
 import dash_bootstrap_components as dbc
 from dash import Input, Output, dcc, html
@@ -62,7 +62,7 @@ sidebar = html.Div(
         dbc.Nav(
             [
                 dbc.NavLink("Tipos", href="/", active="exact"),
-                dbc.NavLink("Papeleras solares", href="/page-1", active="exact"),
+                dbc.NavLink("instalaciones fotovoltaicas", href="/page-1", active="exact"),
                 dbc.NavLink("Consumo y géneracion Madrid", href="/page-2", active="exact"),
             ],
             vertical=True,

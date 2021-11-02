@@ -3,7 +3,7 @@
 import dash
 import pandas as pd
 import dash_core_components as dcc
-import dash_html_components as html
+from dash import html
 import plotly.express as px
 import dash_table
 import dash_bootstrap_components as dbc
@@ -43,7 +43,7 @@ def pageFotos():
         ], className="row"),
     ]),
     html.Div([
-        html.H3("Numbre total de fotovolaica : %d " % (totalFoto))
+        html.H3("Numbre total de instalaciones : %d " % (totalFoto))
     ]),
 
     html.Div([
