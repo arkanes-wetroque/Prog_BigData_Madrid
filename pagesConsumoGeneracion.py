@@ -1,14 +1,13 @@
 
 
 #TODO - Work out on the new way of process used with Data vehicules
-import dash
+
 import pandas as pd
 import dash_core_components as dcc
 from dash import html
 import plotly.express as px
 from dash import dash_table
-import dash_bootstrap_components as dbc
-import plotly.graph_objs as go
+
 
 from datasConsYCrea import getConso, getGenere, getDataByAmbito, getDataFrameByAmbito, getAmbitoTypeEnergy
 

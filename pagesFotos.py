@@ -1,14 +1,9 @@
 
 
-import dash
-import pandas as pd
+
 import dash_core_components as dcc
 from dash import html
 import plotly.express as px
-import dash_table
-import dash_bootstrap_components as dbc
-import plotly.graph_objs as go
-
 from datasFotos import dfFotoAll
 
 dfAll = dfFotoAll()
