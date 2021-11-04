@@ -10,8 +10,12 @@ This project is an analyze of different open datas about comune of Madrid.
 *We are still working of the project so at the moment we only put the main librairies used (Everything will be translated in spanish before the end of the project*
 * Pandas
 * Dash
+* dash_bootstrap_components 
+* dash_core_components
 * Numpy
 * plotly
+* pathlib
+* plotly.express
 
 - [x] Importing Datas and pre-traitement into DATAFRAMES
 - [x] Ceation of the main functions
@@ -29,6 +33,14 @@ The jupyter notbooks aren't the final processing way but only tests.
 * pages_.py : are the seperate div files for each screens.
 * Datas/ : contains all the CSV Files and some PDF about stuctures.
 * assets/ : contains the css for the project (based on the shared one from dash).
+
+### Starting
+Make sure to have all dependencies
+```
+python3 main.py
+Dash is running on http://127.0.0.1:8050/
+
+```
 
 
 ## Here some screenshots of few charts and tables of the project
