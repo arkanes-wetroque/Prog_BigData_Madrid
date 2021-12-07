@@ -1,5 +1,4 @@
 
-
 #TODO - Work out on the new way of process used with Data vehicules
 
 import pandas as pd
@@ -7,7 +6,6 @@ from dash import dcc
 from dash import html
 import plotly.express as px
 from dash import dash_table
-
 
 from datasConsYCrea import getConso, getGenere, getDataByAmbito, getDataFrameByAmbito, getAmbitoTypeEnergy
 
@@ -20,7 +18,6 @@ g2020 = getGenere(2020)
 
 #For ambito analyse (variables
 
-
 Conso2018Ambitio = getDataFrameByAmbito(2018, "Consumida")
 Conso2019Ambitio = getDataFrameByAmbito(2019, "Consumida")
 Conso2020Ambitio = getDataFrameByAmbito(2020, "Consumida")
@@ -28,8 +25,6 @@ Conso2020Ambitio = getDataFrameByAmbito(2020, "Consumida")
 Gene2018Ambitio = getDataFrameByAmbito(2018, "Generada")
 Gene2019Ambitio = getDataFrameByAmbito(2019, "Generada")
 Gene2020Ambitio = getDataFrameByAmbito(2020, "Generada")
-
-
 
 ConsoAmbitioPerYear = pd.concat([Conso2018Ambitio,Conso2019Ambitio['count'],Conso2020Ambitio['count']], axis=1)
 ConsoAmbitioPerYear.columns.values[1]= "2018"
@@ -45,17 +40,12 @@ geneAm2018 = getAmbitoTypeEnergy("Generada", 2018 )
 geneAm2019 = getAmbitoTypeEnergy("Generada", 2019 )
 geneAm2020 = getAmbitoTypeEnergy("Generada", 2020 )
 
-
-
-
-
-
 d = { 'Year': [2018, 2019, 2020], 'Consomation': [c2018, c2019, c2020],'Creation': [g2018, g2019, g2020]}
 DataTableConsoGen = pd.DataFrame(data=d)
 
 
 #par de consomation et creation par année
-lineChartResum = px.line(DataTableConsoGen,x= "Year", y=["Consomation","Creation"], title="Test")
+lineChartResum = px.line(DataTableConsoGen,x= "Year", y=["Consomation","Creation"], title="Curva que representa el consomation y la generation de Madrid")
 pieGene2018 = px.pie(geneAm2018, values='CANTIDAD', names='ÁMBITO 2', title="2018 generation")
 pieGene2019 = px.pie(geneAm2019, values='CANTIDAD', names='ÁMBITO 2', title="2019 generation")
 pieGene2020 = px.pie(geneAm2020, values='CANTIDAD', names='ÁMBITO 2', title="2020 generation")
@@ -72,7 +62,7 @@ def pageConsumoGeneracion():
     return html.Div(children=[
     html.H1(children='Consomation y generation energia Madrid'),
     html.Div(children='''
-    Message de tes
+    Esta página recoge los análisis sobre consomation y la generation energia de Madrid.
     '''),
 
     html.Div(children=[        # Premier Graph
