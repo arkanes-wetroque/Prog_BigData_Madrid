@@ -29,7 +29,7 @@ def pageFotos():
     return html.Div(children=[
     html.H1(children='Inventorio de los instalaciones fotovoltaicas de Madrid'),
     html.Div(children='''
-    Message de tes
+    
     '''),
 
     html.Div([
