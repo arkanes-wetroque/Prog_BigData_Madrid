@@ -31,6 +31,12 @@ Gene2020Ambitio = getDataFrameByAmbito(2020, "Generada")
 
 
 
+
+
+# TODO - La simplification Victor
+#------------- Partie à simplififer dans une fonction------
+#--- Attentions aux utilisations plus bas -------
+
 ConsoAmbitioPerYear = pd.concat([Conso2018Ambitio,Conso2019Ambitio['count'],Conso2020Ambitio['count']], axis=1)
 ConsoAmbitioPerYear.columns.values[1]= "2018"
 ConsoAmbitioPerYear.columns.values[2]= "2019"
