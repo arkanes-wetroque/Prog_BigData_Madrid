@@ -21,15 +21,15 @@ fig = px.scatter_mapbox(dfAll, lat="Latitud", lon="Longitud", hover_name="Centro
 fig.update_layout(mapbox_style="open-street-map")
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
-pieEmpresa = px.pie(groupEmpresa, values='counts', names='Empresa', title="Instalation per Empresa")
-bar1 = px.bar(groupEmpresa, x="Empresa", y="counts",barmode="group")
-barUsos = px.bar(groupUsos, x="Uso", y="counts",barmode="group")
+pieEmpresa = px.pie(groupEmpresa, values='counts', names='Empresa', title="Instalaciones por empresa (Gráfico circular)")
+bar1 = px.bar(groupEmpresa, x="Empresa", y="counts",barmode="group", title="Instalaciones por empresa (Gráfico de barras)")
+barUsos = px.bar(groupUsos, x="Uso", y="counts",barmode="group", title="Instalaciones por uso (Gráfico de barras)")
 
 def pageFotos():
     return html.Div(children=[
     html.H1(children='Inventorio de los instalaciones fotovoltaicas de Madrid'),
     html.Div(children='''
-    Message de tes
+    Datos de data.gob.es
     '''),
 
     html.Div([
@@ -38,7 +38,7 @@ def pageFotos():
         ], className="row"),
     ]),
     html.Div([
-        html.H3("Numbre total de instalaciones : %d " % (totalFoto))
+        html.H3("Número de instalaciones : %d " % (totalFoto))
     ]),
 
     html.Div([
