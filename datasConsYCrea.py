@@ -76,7 +76,7 @@ def getGeneT(year1, year2):
     return gene
 #---------------------------------------------/\-------------------------------------------------------
 
-def getConsoAmbitioT(year1, year2):
+def getConsoAmbitioT1(year1, year2):
     consoAmbi = []
     for year in range(year1, year2 + 1):
         cA = getDataFrameByAmbito(year, "Consumida")
@@ -99,20 +99,36 @@ def getConsoAmbitioT(year1, year2):
         cA = getDataFrameByAmbito(year, "Consumida")
         consoAmbi.append(cA)
         year = year+1
+        print("------1------")
+        print(cA)
 
-    #2
     if count == 2:
-        cAT = pd.concat([cA, cA['count'], cA['count']], axis=1)
+        a = consoAmbi[0]
+        b = consoAmbi[1]
+        c = consoAmbi[2]
+
+    else:
+        a = consoAmbi[0]
+        b = consoAmbi[1]
+    #3
+    if count == 2:
+        cAT = pd.concat([a, b['count'], c['count']], axis=1)
+        test = cAT
 
     else:
         cAT = pd.concat([cA, cA['count']], axis=1)
-
+        test = cAT
     #3
     for year in range(year1, year2 + 1):
         sYear = str(year)
         cAT.columns.values[i] = sYear
         i = i+1
+
+    print("------2------")
     print(cAT)
+    print("------3------")
+    print(test)
+
     return cAT
 
 def getGeneAmbitioT(year1, year2):
@@ -126,11 +142,22 @@ def getGeneAmbitioT(year1, year2):
         geneAmbi.append(gA)
         year = year+1
 
-    #2
     if count == 2:
-        cAT = pd.concat([gA, gA['count'], gA['count']], axis=1)
+        a = geneAmbi[0]
+        b = geneAmbi[1]
+        c = geneAmbi[2]
+
     else:
-        cAT = pd.concat([gA, gA['count']], axis=1)
+        a = geneAmbi[0]
+        b = geneAmbi[1]
+    #3
+    if count == 2:
+        cAT = pd.concat([a, b['count'], c['count']], axis=1)
+        test = cAT
+
+    else:
+        cAT = pd.concat([cA, cA['count']], axis=1)
+        test = cAT
 
     #3
     for year in range(year1, year2 + 1):

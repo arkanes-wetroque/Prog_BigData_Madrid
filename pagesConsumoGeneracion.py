@@ -8,7 +8,7 @@ from dash import html
 import plotly.express as px
 from dash import dash_table
 
-from datasConsYCrea import getConsoT, getGeneT, getConsoAmbitioT, getGeneAmbitioT, getYearT, getYearTs, graphPieGen
+from datasConsYCrea import getConsoT, getGeneT, getConsoAmbitioT, getGeneAmbitioT, getYearT, getYearTs, graphPieGen, getConsoAmbitioT1
 
 #Init
 rYear = getYearT(2018, 2020)
@@ -16,6 +16,7 @@ sYear = getYearTs(2018, 2020)
 rConsoT = getConsoT(2018, 2020)
 rGeneT = getGeneT(2018, 2020)
 rConsoAmbitioT = getConsoAmbitioT(2018, 2020)
+rConsoAmbitioT1 = getConsoAmbitioT1(2018, 2020)
 rGeneAmbitioT = getGeneAmbitioT(2018, 2020)
 rGraphPie = graphPieGen()
 
