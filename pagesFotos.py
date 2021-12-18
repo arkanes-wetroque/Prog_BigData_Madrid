@@ -7,11 +7,12 @@ import plotly.express as px
 from datasFotos import dfFotoAll
 
 dfAll = dfFotoAll()
-totalFoto = dfAll.shape[0]
+totalFoto = dfAll.shape[0] # get total
 
+#Analyse by buisness
 group=dfAll.groupby(["Empresa"])
 groupEmpresa = group.size().reset_index(name='counts')
-
+#Analyse by use
 usos=dfAll.groupby(["Uso"])
 groupUsos = usos.size().reset_index(name='counts')
 
@@ -27,7 +28,7 @@ barUsos = px.bar(groupUsos, x="Uso", y="counts",barmode="group", title="Instalac
 
 def pageFotos():
     return html.Div(children=[
-    html.H1(children='Inventorio de los instalaciones fotovoltaicas de Madrid'),
+    html.H1(children='Inventario de los instalaciones fotovoltaicas de Madrid'),
     html.Div(children='''
     Datos de data.gob.es
     '''),
