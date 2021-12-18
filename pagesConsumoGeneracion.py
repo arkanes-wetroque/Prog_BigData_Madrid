@@ -10,7 +10,7 @@ from dash import dash_table
 
 from datasConsYCrea import getConsoT, getGeneT, getConsoAmbitioT, getGeneAmbitioT, getYearT, getYearTs, graphPieGen
 
-#init
+#Init
 rYear = getYearT(2018, 2020)
 sYear = getYearTs(2018, 2020)
 rConsoT = getConsoT(2018, 2020)
@@ -18,6 +18,7 @@ rGeneT = getGeneT(2018, 2020)
 rConsoAmbitioT = getConsoAmbitioT(2018, 2020)
 rGeneAmbitioT = getGeneAmbitioT(2018, 2020)
 rGraphPie = graphPieGen()
+
 
 d = {'Year': rYear, 'Consomation': rConsoT, 'Creation': rGeneT}
 DataTableConsoGen = pd.DataFrame(data=d)
@@ -41,7 +42,7 @@ def pageConsumoGeneracion():
     html.Div(children='''
     Select date range
     '''),
-
+        #--- Modif il faut récup la value voir avec un @app.callback ??????
         html.Div([
             dcc.RangeSlider(
                 min=2018,
