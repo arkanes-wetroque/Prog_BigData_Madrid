@@ -1,4 +1,7 @@
 import pandas as pd
+import plotly.express as px
+from dash import dcc
+from dash import html
 from pathlib import Path
 
 
@@ -35,3 +38,118 @@ def getAmbitoTypeEnergy(type, year):
     res = df1t.groupby(['ÁMBITO 2', 'AÑO', 'CLASE', 'TIPO'])['CANTIDAD'].mean().reset_index()
     res = res[(res['CLASE'] == type) & (res['AÑO'] == year)]
     return res
+
+#--------------------------------------All function for init -------------------------------------------------------#
+
+def getYearT(year1, year2): #Récup toute les dates et les mets dans une list (en int )
+    year = []
+    for yearR in range(year1, year2 + 1):
+        y = yearR
+        year.append(y)
+        yearR = yearR+1
+    return year
+
+def getYearTs(year1, year2): #Récup toute les dates et les mets dans une list (en str)
+    year = []
+    for yearR in range(year1, year2 + 1):
+        yS = yearR
+        sYear = str(yS)
+        year.append(sYear)
+        yearR = yearR+1
+    return year
+# Permet de récup les valeurs pour le premier graph
+#---------------------------------------------\/-------------------------------------------------------
+def getConsoT(year1, year2):
+    conso = []
+    for year in range(year1, year2 + 1):
+        c = getConso(year)
+        conso.append(c)
+        year = year+1
+    return conso
+
+def getGeneT(year1, year2):
+    gene = []
+    for year in range(year1, year2 + 1):
+        g = getGenere(year)
+        gene.append(g)
+        year = year+1
+    return gene
+#---------------------------------------------/\-------------------------------------------------------
+
+def getConsoAmbitioT(year1, year2):
+    consoAmbi = []
+    for year in range(year1, year2 + 1):
+        cA = getDataFrameByAmbito(year, "Consumida")
+        consoAmbi.append(cA)
+        year = year+1
+    return consoAmbi
+
+# Permet de récup les valeurs pour le deux tableau (1) et gère la taille du tableau en fonction du nombre d'année sélec (2)
+# et les mets dans une list (3)
+#---------------------------------------------\/-------------------------------------------------------
+
+def getConsoAmbitioT(year1, year2):
+    consoAmbi = []
+    i = 1
+    count = year2-year1
+    print(count)
+
+    #1
+    for year in range(year1, year2 + 1):
+        cA = getDataFrameByAmbito(year, "Consumida")
+        consoAmbi.append(cA)
+        year = year+1
+
+    #2
+    if count == 2:
+        cAT = pd.concat([cA, cA['count'], cA['count']], axis=1)
+
+    else:
+        cAT = pd.concat([cA, cA['count']], axis=1)
+
+    #3
+    for year in range(year1, year2 + 1):
+        sYear = str(year)
+        cAT.columns.values[i] = sYear
+        i = i+1
+    print(cAT)
+    return cAT
+
+def getGeneAmbitioT(year1, year2):
+    i = 1
+    count = year2 - year1
+    geneAmbi = []
+
+    #1
+    for year in range(year1, year2 + 1):
+        gA = getDataFrameByAmbito(year, "Generada")
+        geneAmbi.append(gA)
+        year = year+1
+
+    #2
+    if count == 2:
+        cAT = pd.concat([gA, gA['count'], gA['count']], axis=1)
+    else:
+        cAT = pd.concat([gA, gA['count']], axis=1)
+
+    #3
+    for year in range(year1, year2 + 1):
+        sYear = str(year)
+        cAT.columns.values[i] = sYear
+        i = i + 1
+    return cAT
+#---------------------------------------------/\-------------------------------------------------------
+
+# Init les derniers graphs à la base je voulais générer le bon nombre de graphs mais j'ai un pb avoir ???
+
+def graphPieGen():
+    i = 1
+    graphPie = []
+    for year in range(2018, 2021):
+        gP = getAmbitoTypeEnergy("Generada", year)
+        gYear = str(year) + " generation"
+        gPC = px.pie(gP, values='CANTIDAD', names='ÁMBITO 2', title=gYear)
+        graphPie.append(gPC)
+        year = year + 1
+
+    return graphPie
