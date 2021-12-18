@@ -33,7 +33,7 @@ dataUso21 = groupUso21.size().reset_index(name='counts')
 # group by vehicule count
 groupVeh21=dfV21.groupby(["Vehicule"])['Num']
 dataVeh21 = groupVeh21.size().reset_index(name='counts')
-
+# group by vehicule consumo
 groupVehEn21=dfV21.groupby(["Vehicule", "Energie"])['Num']
 dataVehEn21 = groupVehEn21.size().reset_index(name='counts')
 
@@ -41,11 +41,10 @@ dataVehEn21 = groupVehEn21.size().reset_index(name='counts')
 
 
 
-
+# Graph by tipo de Energie by year
 figureConsoTotal = px.bar(dataEnergie,x= "Energie", y= "counts", color="Date", barmode="group")
+
 figureEnergieByVeh21 = px.bar(dataVehEn21,x= "Vehicule", y= "counts",color="Energie",  barmode="group")
-
-
 figureEnergieByVehTotal = px.bar(dataEnergie,x= "Energie", y= "counts", color="Energie",  barmode="group")
 
 
