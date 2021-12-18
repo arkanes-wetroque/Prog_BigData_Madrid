@@ -50,23 +50,29 @@ figureEnergieByVehTotal = px.bar(dataEnergie,x= "Energie", y= "counts", color="E
 
 
 #figureConsoUso = px.bar(dataUso21,x= "Energie", y= "counts", color="Date", barmode="group")
-pieUso21 = px.pie(dataUso21, values='counts', names='Uso', title="Répartition movil par utilisation")
-pieVeh21 = px.pie(dataVeh21, values='counts', names='Vehicule', title="Répartition par vehicule")
+pieUso21 = px.pie(dataUso21, values='counts', names='Uso', title="Distribución por tipo de uso en 2021")
+pieVeh21 = px.pie(dataVeh21, values='counts', names='Vehicule', title="Distribución por tipe de vehiculos en 2021")
 
+#update the position of the title for both pie chart
+pieUso21.update_layout(title={'y':1.0, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top'})
+pieVeh21.update_layout(title={'y':1.0, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top'})
 
+#update the size of values in the pie graph
+pieUso21.update_traces(textfont_size=15)
+pieVeh21.update_traces(textfont_size=15)
 
 
 
 def pageTypeConso():
     return html.Div(children=[
-    html.H1(children='El parque movil de la Ayu.. de Madrid'),
+    html.H1(children='El parque movil de la ayuntamiento de Madrid'),
     html.Div(children='''
-    Cette page regroupe les analyses sur le parc automobile de madrid
+    Esta página contiene análisis del parque automovilístico de Madrid
     
     '''),
 
     html.Div(children=[
-        html.H5("Nombre de vehicule par type de consomation d'énergie"),
+        html.H5("Número de vehículos por tipo de energía"),
         dcc.Graph(
         id='test-graph',
         figure=figureConsoTotal
