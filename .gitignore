@@ -1,4 +1,8 @@
 .idea
-__pycache__/
+
 .venv
 .ipynb_checkpoints
+_pycache_
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
