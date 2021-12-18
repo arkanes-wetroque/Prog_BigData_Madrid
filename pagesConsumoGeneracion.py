@@ -25,7 +25,7 @@ DataTableConsoGen = pd.DataFrame(data=d)
 
 
 #par de consomation et creation par année
-lineChartResum = px.line(DataTableConsoGen,x= "Year", y=["Consomation","Creation"], title="Test")
+lineChartResum = px.line(DataTableConsoGen,x= "Year", y=["Consomation","Creation"])
 
 #par de consomation et creation par année
 barChartAmbiConsum = px.bar(rConsoAmbitioT,x= "Ambito", y=sYear, barmode="group", title="Consomation de los Ambitos per year")
@@ -42,15 +42,8 @@ def pageConsumoGeneracion():
     html.Div(children='''
     Select date range
     '''),
-        #--- Modif il faut récup la value voir avec un @app.callback ??????
-        html.Div([
-            dcc.RangeSlider(
-                min=2018,
-                max=2020,
-                value=[2018, 2020],
-                tooltip={"placement": "bottom", "always_visible": True}
-            )
-        ]),
+        
+        
 
 
         html.Div(children=[        # Premier Graph
