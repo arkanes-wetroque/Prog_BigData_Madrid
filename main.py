@@ -1,7 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import Input, Output, dcc, html
-
+from datetime import date
 
 
 
@@ -73,9 +73,8 @@ def render_page_content(pathname):
             html.Hr(),
             html.P(f"The pathname {pathname} was not recognised..."),
         ]
+
     )
-
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
