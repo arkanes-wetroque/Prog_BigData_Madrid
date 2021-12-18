@@ -11,13 +11,15 @@ from dash import dash_table
 from datasConsYCrea import getConsoT, getGeneT, getConsoAmbitioT, getGeneAmbitioT, getYearT, getYearTs, graphPieGen, getConsoAmbitioT1
 
 #Init
-rYear = getYearT(2018, 2020)
-sYear = getYearTs(2018, 2020)
-rConsoT = getConsoT(2018, 2020)
-rGeneT = getGeneT(2018, 2020)
-rConsoAmbitioT = getConsoAmbitioT(2018, 2020)
-rConsoAmbitioT1 = getConsoAmbitioT1(2018, 2020)
-rGeneAmbitioT = getGeneAmbitioT(2018, 2020)
+Y1 = 2018
+Y2 = 2020
+rYear = getYearT(Y1, Y2)
+sYear = getYearTs(Y1, Y2)
+rConsoT = getConsoT(Y1, Y2)
+rGeneT = getGeneT(Y1, Y2)
+rConsoAmbitioT = getConsoAmbitioT(Y1, Y2)
+rConsoAmbitioT1 = getConsoAmbitioT1(Y1, Y2)
+rGeneAmbitioT = getGeneAmbitioT(Y1, Y2)
 rGraphPie = graphPieGen()
 
 
