@@ -44,17 +44,17 @@ def pageFotos():
 
     html.Div([
         html.Div([
-            dcc.Graph(id='test-graph22',
+            dcc.Graph(id='EmpresaPie',
                       figure=pieEmpresa)
         ], className="six columns"),
         html.Div([
-            dcc.Graph(id='test-graph22',
+            dcc.Graph(id='bar1',
                       figure=bar1)
         ], className="six columns"),
 
     ], className="row"),
     html.Div([
-        dcc.Graph(id='test-graph22',
+        dcc.Graph(id='bar1Uso',
                   figure=barUsos)
     ], className="six columns"),
 
