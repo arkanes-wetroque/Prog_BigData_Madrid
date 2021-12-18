@@ -25,7 +25,7 @@ DataTableConsoGen = pd.DataFrame(data=d)
 
 
 #par de consomation et creation par année
-lineChartResum = px.line(DataTableConsoGen,x= "Year", y=["Consomation","Creation"])
+lineChartResum = px.line(DataTableConsoGen,x= "Year", y=["Consomation","Creation"], title="Consomation y generacion per Ano per Ambitio")
 
 #par de consomation et creation par année
 barChartAmbiConsum = px.bar(rConsoAmbitioT,x= "Ambito", y=sYear, barmode="group", title="Consomation de los Ambitos per year")
@@ -40,11 +40,15 @@ def pageConsumoGeneracion():
     return html.Div(children=[
     html.H1(children='Consomation y generation energia Madrid'),
     html.Div(children='''
-    Select date range
+    Nuestro conjunto de datos procede de datos.madrid.es.
     '''),
-        
-        
-
+    html.H3(children='Resumen'),
+    html.Div('''
+    El objetivo es analizar el consumo y la producción de energía a lo largo de 3 años para el conjunto del 
+    municipio de Madrid con el fin de interpretar los cambios, destacar la "zona" que más consume y produce 
+    con el tipo de producción utilizado. Gracias a este análisis, podremos destacar las diferentes tendencias 
+    de cambio (hacia una producción más ecológica, por ejemplo).  
+    '''),
 
         html.Div(children=[        # Premier Graph
         dcc.Graph(
