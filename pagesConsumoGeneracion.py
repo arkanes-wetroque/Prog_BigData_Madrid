@@ -3,6 +3,7 @@
 #TODO - Work out on the new way of process used with Data vehicules
 
 import pandas as pd
+import sys
 from dash import dcc
 from dash import html
 import plotly.express as px
@@ -11,12 +12,22 @@ from dash import dash_table
 from datasConsYCrea import getConsoT, getGeneT, getConsoAmbitioT, getGeneAmbitioT, getYearT, getYearTs, graphPieGen
 
 #Init
-rYear = getYearT(2018, 2020)
-sYear = getYearTs(2018, 2020)
-rConsoT = getConsoT(2018, 2020)
-rGeneT = getGeneT(2018, 2020)
-rConsoAmbitioT = getConsoAmbitioT(2018, 2020)
-rGeneAmbitioT = getGeneAmbitioT(2018, 2020)
+Y1 = 2018
+Y2 = 2020
+
+while Y1 not in {2018, 2019}:
+    print("\n....ERROR$STR: valor incorrecto")
+    sys.exit()
+while Y2 not in {2019, 2020}:
+    print("\n....ERROR$STR: valor incorrecto")
+    sys.exit()
+
+rYear = getYearT(Y1, Y2)
+sYear = getYearTs(Y1, Y2)
+rConsoT = getConsoT(Y1, Y2)
+rGeneT = getGeneT(Y1, Y2)
+rConsoAmbitioT = getConsoAmbitioT(Y1, Y2)
+rGeneAmbitioT = getGeneAmbitioT(Y1, Y2)
 rGraphPie = graphPieGen()
 
 
