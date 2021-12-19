@@ -9,11 +9,12 @@ from dash import html
 import plotly.express as px
 from dash import dash_table
 
-from datasConsYCrea import getConsoT, getGeneT, getConsoAmbitioT, getGeneAmbitioT, getYearT, getYearTs, graphPieGen, getConsoAmbitioT1
+from datasConsYCrea import getConsoT, getGeneT, getConsoAmbitioT, getGeneAmbitioT, getYearT, getYearTs, graphPieGen
 
 #Init
-Y1 = 2020
+Y1 = 2018
 Y2 = 2020
+
 while Y1 not in {2018, 2019}:
     print("\n....ERROR$STR: valor incorrecto")
     sys.exit()
@@ -26,7 +27,6 @@ sYear = getYearTs(Y1, Y2)
 rConsoT = getConsoT(Y1, Y2)
 rGeneT = getGeneT(Y1, Y2)
 rConsoAmbitioT = getConsoAmbitioT(Y1, Y2)
-rConsoAmbitioT1 = getConsoAmbitioT1(Y1, Y2)
 rGeneAmbitioT = getGeneAmbitioT(Y1, Y2)
 rGraphPie = graphPieGen()
 

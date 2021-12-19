@@ -76,14 +76,6 @@ def getGeneT(year1, year2):
     return gene
 #---------------------------------------------/\-------------------------------------------------------
 
-def getConsoAmbitioT1(year1, year2):
-    consoAmbi = []
-    for year in range(year1, year2 + 1):
-        cA = getDataFrameByAmbito(year, "Consumida")
-        consoAmbi.append(cA)
-        year = year+1
-    return consoAmbi
-
 # Permet de récup les valeurs pour le deux tableau (1) et gère la taille du tableau en fonction du nombre d'année sélec (2)
 # et les mets dans une list (3)
 #---------------------------------------------\/-------------------------------------------------------
