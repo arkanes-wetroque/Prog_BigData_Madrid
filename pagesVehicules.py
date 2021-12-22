@@ -21,10 +21,10 @@ dfV20 = processTotal(fileV2020,"2020")
 dfV21 = processTotal(fileV2021,"2021")
 
 dataframeTotal = fusionDF(dfV17, dfV18, dfV19, dfV20, dfV21)
-print(dataframeTotal)
+#print(dataframeTotal)
 
 
-# Not used cuz in test , Blocked by concat atm need to concat without losing row values
+
 groupEnergie=dataframeTotal.groupby(["Energie", "Date"])['Num']
 dataEnergie = groupEnergie.size().reset_index(name='counts')
 # repartion par type d'utilisation
