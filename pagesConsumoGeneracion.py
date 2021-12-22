@@ -40,7 +40,7 @@ lineChartResum = px.line(DataTableConsoGen,x= "Year", y=["Consomation","Creation
 
 #par de consomation et creation par année
 barChartAmbiConsum = px.bar(rConsoAmbitioT,x= "Ambito", y=sYear, barmode="group", title="Consomation de los Ambitos per year")
-barChartAmbiGene = px.bar(rGeneAmbitioT,x= "Ambito", y=sYear, barmode="group", title="Consomation de los Ambitos per year")
+barChartAmbiGene = px.bar(rGeneAmbitioT,x= "Ambito", y=sYear, barmode="group", title="Generation de los Ambitos per year")
 
 #trace1 = go.Bar(x=pv.index, y=pv[('Quantity', 'declined')], name='Declined')
 diff = DataTableConsoGen["Consomation"] - DataTableConsoGen["Creation"]
