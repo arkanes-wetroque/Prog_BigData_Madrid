@@ -37,6 +37,16 @@ The jupyter notbooks aren't the final processing way but only tests.
 ### Starting
 Make sure to have all dependencies
 ```
+pip install -r requierements.txt
+Dash is running on http://127.0.0.1:8050/
+
+```
+### If the requierements doesn't work, you can install the lib
+### manually on ur env:
+- pip install dash
+- pip install dash-bootstrap-components
+- pip install openpyxl
+```
 python3 main.py
 Dash is running on http://127.0.0.1:8050/
 
